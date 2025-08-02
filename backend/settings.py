@@ -26,7 +26,12 @@ SECRET_KEY = 'django-insecure-d-)tp-j8ugj#3uihl_j&e!rrxwa3o6+p+aso#@-x1(0%^rp5r_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    "tradesadvisor.ai",
+    "ta-backend-087e.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
