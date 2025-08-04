@@ -1,6 +1,10 @@
 import os
 from pathlib import Path
 import dj_database_url
+import psycopg
+psycopg.adapters.set_loader(psycopg.adapters.Loader)
+psycopg.adapters.set_dumper(psycopg.adapters.Dumper)
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
