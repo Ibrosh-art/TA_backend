@@ -9,10 +9,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-e@5ny0mk^4!y1tirk&h_#
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = [
-    'https://ta-backend-087e.onrender.com',  # Ваш домен Render
+    'ta-backend-087e.onrender.com',  # Ваш домен Render
     'localhost',
     '127.0.0.1',
-    "https://tradesadvisor.ai"
+    "tradesadvisor.ai"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
