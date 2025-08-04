@@ -1,12 +1,12 @@
 import os
 from pathlib import Path
 import dj_database_url
-from dotenv import load_dotenv
 
-# Загрузка переменных окружения
-load_dotenv()
+
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 SECRET_KEY = os.environ.get('SECRET_KEY')  # Будет браться из переменных окружения
 
