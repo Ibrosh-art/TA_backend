@@ -1,19 +1,15 @@
 import os
 from pathlib import Path
 import dj_database_url
-import psycopg
-psycopg.adapters.set_loader(psycopg.adapters.Loader)
-psycopg.adapters.set_dumper(psycopg.adapters.Dumper)
-
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-e@5ny0mk^4!y1tirk&h_#jg430#xhh#x5a=')  # Обязательно замените!
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-e@5ny0mk^4!y1tirk&h_#jg430#xhh#x5a=')
 
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = [
-    'ta-backend-087e.onrender.com',  # Ваш домен Render
+    'ta-backend-087e.onrender.com',
     'localhost',
     '127.0.0.1',
     "tradesadvisor.ai"
@@ -31,13 +27,11 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'whitenoise.runserver_nostatic',  # Важно для dev-сервера
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     
-    # Ваши приложения
     'translations',
     
-    # Сторонние
     'corsheaders',
     'rest_framework',
 ]
@@ -99,31 +93,25 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Internationalization
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Static files
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# Media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Default primary key
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# CORS
 CORS_ALLOWED_ORIGINS = [
     "https://tradesadvisor.ai",
     "http://localhost:5173",
-    ]
+]
 
-# DRF
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
