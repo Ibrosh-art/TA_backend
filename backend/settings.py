@@ -70,8 +70,8 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 # Database
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL'),
+    'default': dj_database_url.parse(
+        'postgresql://myapp_db_rwla_user:m3GltTm0E6bHR9kBoX1ENQ3E65iARAXs@dpg-d28507fdiees73d9l050-a/myapp_db_rwla',
         conn_max_age=600,
         ssl_require=True
     )
